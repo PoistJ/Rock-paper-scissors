@@ -25,6 +25,8 @@ function getHumanChoice() {
     return humanChoice;
 }
 
+console.log("Testing");
+
 let computerChoice;
 let humanChoice;
 
