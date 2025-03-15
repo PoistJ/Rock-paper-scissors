@@ -13,19 +13,17 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    humanChoice = prompt("Please pick a number between 0 - 2. (0 is rock, 1 is paper, 2 is scissors)");
+    inputNumber = prompt("Please pick a number between 0 - 2. (0 is rock, 1 is paper, 2 is scissors)");
     
-    if (humanChoice === 0) {
-        humanChoice = "rock";
-    } else if (humanChoice === 1) {
-        humanChoice = "paper";
-    } else if (humanChoice === 2) {
-        humanChoice = "scissors";
+    if (inputNumber == 0) {
+        hChoice = "rock";
+    } else if (inputNumber == 1) {
+        hChoice = "paper";
+    } else if (inputNumber == 2) {
+        hChoice = "scissors";
     }
-    return humanChoice;
+    return hChoice;
 }
-
-console.log("Testing");
 
 let computerChoice;
 let humanChoice;
