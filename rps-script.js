@@ -13,21 +13,58 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    inputNumber = prompt("Please pick a number between 0 - 2. (0 is rock, 1 is paper, 2 is scissors)");
-    
-    if (inputNumber == 0) {
-        hChoice = "rock";
-    } else if (inputNumber == 1) {
-        hChoice = "paper";
-    } else if (inputNumber == 2) {
-        hChoice = "scissors";
-    }
-    return hChoice;
+    inputChoice = prompt("Please pick rock, paper, or scissors");
+
+    return inputChoice;
 }
+
+    function playRound (humanChoice, computerChoice) {
+        if (humanChoice == "rock" && computerChoice == "scissors") {
+            decision = 0;
+        } else if (humanChoice == "scissors" && computerChoice == "paper") {
+            decision = 0;
+        } else if (humanChoice == "paper" && computerChoice == "rock") {
+            decision = 0;
+        } else if (humanChoice == computerChoice) {
+            decision = 1;
+        } else {
+            decision = 2;
+        }
+    
+        if (decision == 0) {
+            console.log("You win - " + humanChoice + " beats " + computerChoice + "!");
+        } else if (decision == 1) {
+            console.log("It's a tie!");
+        } else{
+            console.log("You lose - " + computerChoice + " beats " + humanChoice + "!");
+        }
+    
+        if (decision == 0) {
+            humanScore++;
+        } else if (decision == 1) {
+            return;
+        } else if (decision == 2) {
+            computerScore++;
+        }
+    
+        console.log("Your score is " + humanScore + ". The computer's score is " + computerScore + ".");
+    }
 
 let computerChoice;
 let humanChoice;
+let humanScore;
+let computerScore;
+let i
 
-computerChoice = getComputerChoice();
-humanChoice = getHumanChoice();
-console.log("Your choice is " + humanChoice);
+humanScore = 0;
+computerScore = 0;
+
+
+for (i =0;i < 5; i++) {
+    computerChoice = getComputerChoice();
+    humanChoice = getHumanChoice().toLowerCase();
+
+    console.log("Player choice: " + humanChoice);
+    console.log("Computer choice: " + computerChoice);
+    playRound(humanChoice,computerChoice);
+}
