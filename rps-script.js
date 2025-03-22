@@ -59,7 +59,37 @@ let i
 humanScore = 0;
 computerScore = 0;
 
+const rockBtn = document.querySelector("#rockBtn");
+rockBtn.addEventListener('click', () => {
+    let computerChoice;
+    let humanChoice;
+    
+    computerChoice = getComputerChoice();
+    humanChoice = "rock";
+    console.log("Player choice: " + humanChoice);
+    console.log("Computer choice: " + computerChoice);
+    playRound(humanChoice,computerChoice);
+});
 
+const paperBtn = document.querySelector("#paperBtn");
+paperBtn.addEventListener('click', () => {
+    computerChoice = getComputerChoice();
+    humanChoice = "paper";
+    console.log("Player choice: " + humanChoice);
+    console.log("Computer choice: " + computerChoice);
+    playRound(humanChoice,computerChoice);
+});
+
+const scissorBtn = document.querySelector("#scissorBtn");
+scissorBtn.addEventListener('click', () => {
+    computerChoice = getComputerChoice();
+    humanChoice = "scissors";
+    console.log("Player choice: " + humanChoice);
+    console.log("Computer choice: " + computerChoice);
+    playRound(humanChoice,computerChoice);
+});
+
+/*
 for (i =0;i < 5; i++) {
     computerChoice = getComputerChoice();
     humanChoice = getHumanChoice().toLowerCase();
@@ -68,3 +98,4 @@ for (i =0;i < 5; i++) {
     console.log("Computer choice: " + computerChoice);
     playRound(humanChoice,computerChoice);
 }
+*/
